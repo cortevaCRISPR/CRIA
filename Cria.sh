@@ -13,7 +13,7 @@ threshold=$6
 includeSNP=$7
 type=${8}
 
-##################### Hard-Coded Paramters #############################
+##################### Hard-Coded Paramters - DO UPDATE !!! #############################
 
 trimmomatic="/home/nj8612/bin/trimmomatic-0.33" 
 AdapterRemoval="/home/nj8612/bin/adapterremoval-2.1.7/build/AdapterRemoval"
