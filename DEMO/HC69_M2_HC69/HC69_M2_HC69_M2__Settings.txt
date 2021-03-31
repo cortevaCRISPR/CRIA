@@ -1,0 +1,4 @@
+Date:	2021-03-31 08:57:23
+CRIA Analysis Version:	2.0
+Threshold %:	0.005
+Allele-to-Control Fold Change:	30
