@@ -30,7 +30,7 @@ Cria.sh is the master analysis script which makes internal calls to 2 python scr
  
  Both the input file and information file needs to strictly adhere to the naming guidelines for Cria.sh to work appropriately.
  
- <ins>Input File Guidelines</ins>
+ <ins>Input File Guidelines:</ins>
  
 There are 2 columns in this file. The first is the name of the sample fastq file (without the .fq) and the second is the label. Label denotes if the sample is the  control sample or the treated sample. The label should follow the naming convention - Reference_TargetSite_**Control**\_OptionalFreeText to denote the control sample and Reference_TargetSite_**Rep**\_OptionalFreeText to denote the treated sample. The optional free text is ignored by the script. The terms "Control" and "Rep" in the 2nd column are keywords and should not be modified. Every unique Reference_TargetSite combination is considered as an experiment. And each experiment should have 1 control sample and 1 or more treated samples. You can analyze multiple experiments using Cria.      
  
@@ -42,7 +42,7 @@ There are 2 columns in this file. The first is the name of the sample fastq file
  |Sample1|B73_Target11_Control_Sample1|
  |Sample2|B73_Target11_Rep_Sample2|
  
- <ins>Information File Guidelines</ins>
+ <ins>Information File Guidelines:</ins>
  
 The information file is where the amplicon/reference sequence, forward primer sequence and target site sequences are provided in a fasta format. The sequences are  expected to be in UPPER CASE. The fasta header for these sequences need to follow the below conventions.
 
@@ -52,7 +52,7 @@ The information file is where the amplicon/reference sequence, forward primer se
 
 Please make sure the reference name and target site name used in the information and input file match with each other. Any discrepancies between them causes issues for Cria.  
 
-<ins>NGS Sample Fastq Reads<ins>
+<ins>NGS Sample Fastq Reads:<ins>
  
 The NGS reads are expected to start with the forward primer (some additional bases may be present before the forward primer which will be removed by the script during execution) followed by the amplicon sequence containing the target site. Only reads completely containing the target site sequence are taken into analysis. Cria expects the NGS reads to contain atleats 5 bp following the target site to call a target site completely contained by the read. 
 
@@ -62,7 +62,9 @@ All your sample NGS fastq files must be placed in the folder "Raw_Data" before y
 ## 3. Execution
 
 sh Cria.sh Reference_TargetSite_Input.txt ProjectName AnalysisDirectory ExpectedEditSequence NumersOfBasePairsToTrim MutationThreshold% IncludeSNPsFlag ReadsType 
-<ins>example command</ins>
+
+<ins>Example command:</ins>
+
 sh Cria.sh HC69_M2_Input.txt HC69_M2 /path/to/your/cria/folder NNNN 0 0.005 0 SE
 
 The Cria.sh script expects 8 commandline parameters to be passed to it.
